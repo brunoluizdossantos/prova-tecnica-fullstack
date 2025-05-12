@@ -14,7 +14,7 @@ O banco de dados NoSQL:
 
 - MongoDB
 
-## Comandos para inicializar as aplicações
+## Comandos para inicializar a API
 
 ```bash
 # Para iniciar a API
@@ -25,6 +25,9 @@ npx prisma generate
 
 # Inicia o projeto
 npm run start:dev
+
+# Insira a URL abaixo no navegador, para visualizar a documentação Swagger
+http://localhost:3000/api/
 ```
 
 ## Comandos utilizados para criação da API
@@ -52,6 +55,9 @@ npx prisma db push
 
 # Automatiza a criação de uma estrutura de recursos RESTful
 nest g res users
+
+# Adiciona Swagger ao projeto
+npm install --save @nestjs/swagger swagger-ui-express
 ```
 
 ## Comandos utilizados para criação da UI
