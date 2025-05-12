@@ -9,6 +9,8 @@ Content-Type: application/json
   "name": "Bruno Luiz",
   "description": "Descrição de teste.",
   "image": "123123213.png",
+  "email": "bruno@teste2.com",
+  "password": "123123"
 }
 
 ###
