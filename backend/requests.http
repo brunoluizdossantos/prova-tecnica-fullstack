@@ -1,0 +1,29 @@
+###
+GET http://localhost:3000/users
+
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Bruno Luiz",
+  "description": "Descrição de teste.",
+  "image": "123123213.png",
+}
+
+###
+GET http://localhost:3000/users/6822487ed80af8dd9760a9e9
+
+###
+PATCH http://localhost:3000/users/6822487ed80af8dd9760a9e9
+Content-Type: application/json
+
+{
+  "id": "6822487ed80af8dd9760a9e9",
+  "name": "Bruno Luiz dos Santos",
+  "description": "Descrição de teste.",
+  "image": "123123213.png"
+}
+
+###
+DELETE http://localhost:3000/users/6822487ed80af8dd9760a9e9
