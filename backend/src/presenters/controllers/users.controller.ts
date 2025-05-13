@@ -15,7 +15,7 @@ export class UsersController {
 
   @UseGuards(AuthGuard)
   @Get()
-  async findAllUsers() {
+  async findAllUsers(): Promise<any> {
     return await this.usersService.findAllUsersAsync();
   }
 

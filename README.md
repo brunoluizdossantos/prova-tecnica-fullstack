@@ -55,6 +55,7 @@ npx prisma db push
 
 # Automatiza a criação de uma estrutura de recursos RESTful
 nest g res users
+nest g res crypto
 
 # Adiciona o módulo para a documentação do Swagger ao projeto
 npm install --save @nestjs/swagger swagger-ui-express
@@ -68,6 +69,9 @@ npm i -D @types/bcrypt
 
 # Adiciona o módulo de validação de dados
 npm i --save class-validator class-transformer
+
+# Adiciona o módulo para consumir API's externas
+npm i --save @nestjs/axios axios
 ```
 
 ## Comandos utilizados para criação da UI
