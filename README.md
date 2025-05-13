@@ -8,16 +8,18 @@ A API foi desenvolvida utilizando as seguintes tecnologias:
 
 A UI foi desenvolvida utilizando as seguintes tecnologias:
 
-- Vue
+- Vue 3
+- Vite
+- Vuetify
 
 Banco de dados NoSQL:
 
 - MongoDB
 
-## Comandos para inicializar a API
+## Comandos necessários para inicializar a API
 
 ```bash
-# Para iniciar a API
+# Entra no diretório da API
 $ cd backend
 
 # Adiciona o código de acesso ao banco de dados a partir do arquivo de modelo do Prisma
@@ -28,6 +30,21 @@ npm run start:dev
 
 # Insira a URL abaixo no navegador, para visualizar a documentação Swagger
 http://localhost:3000/api/
+```
+
+## Comandos necessários para inicializar a UI
+```bash
+# Entra no diretório da UI
+cd frontend
+
+# Instala as dependências do projeto
+npm install
+
+# Inicia o projeto
+npm run dev
+
+# Insira a URL abaixo no navegador, para visualizar a UI
+http://localhost:3001/
 ```
 
 ## Comandos utilizados para criação da API
@@ -79,5 +96,21 @@ npm i -D @types/multer
 
 ## Comandos utilizados para criação da UI
 ```bash
-...
+# Realiza a criação do projeto Vue 3 com Vuetify
+npm create vuetify@latest
+
+# Navega até o diretório criado
+cd frontend
+
+# Adiciona biblioteca de validação de formulários
+npm install vee-validate --save
 ```
+
+## Documentações utilizadas
+
+- [Nest](https://docs.nestjs.com)
+- [Prisma ORM](https://www.prisma.io/docs)
+- [Vue](https://vuejs.org/guide/introduction.html)
+- [Vite](https://vite.dev/guide)
+- [Vuetify](https://vuetifyjs.com/en/introduction/why-vuetify)
+- [Material Design](https://m3.material.io)

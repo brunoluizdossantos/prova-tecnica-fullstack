@@ -7,11 +7,9 @@ POST http://localhost:3000/user
 Content-Type: application/json
 
 {
-  "name": "Bruno Luiz",
-  "description": "",
-  "image": "",
-  "email": "bruno@teste7.com",
-  "password": "123123"
+  "name": "teste",
+  "email": "testes@teste.xcvm",
+  "password": "213213213"
 }
 
 ###
