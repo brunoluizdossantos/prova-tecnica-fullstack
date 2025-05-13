@@ -1,5 +1,6 @@
 ###
 GET http://localhost:3000/users
+Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6bnVsbCwiaWF0IjoxNzQ3MDk0Mjk4LCJleHAiOjE3NDcxODA2OTh9.t2IIL8vO9VoMPI-fl38oaQUsp9zJNsOodbLxG2_9NLU"
 
 ###
 POST http://localhost:3000/users
@@ -9,7 +10,7 @@ Content-Type: application/json
   "name": "Bruno Luiz",
   "description": "Descrição de teste.",
   "image": "123123213.png",
-  "email": "bruno@teste2.com",
+  "email": "bruno@teste4.com",
   "password": "123123"
 }
 

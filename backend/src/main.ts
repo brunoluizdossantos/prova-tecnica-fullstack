@@ -1,9 +1,9 @@
 import { NestFactory } from '@nestjs/core';
-import { AuthModule } from './infra/modules/auth.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { AppModule } from '@infra/modules/app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AuthModule);
+  const app = await NestFactory.create(AppModule);
 
   const config = new DocumentBuilder()
     .setTitle('Documentação com Swagger - Prova Técnica Fullstack')
