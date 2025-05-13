@@ -1,13 +1,13 @@
 import { LoginUserDto } from '@application/dto/login-user.dto';
 import { AuthService } from '@application/services/auth.service';
-import { Controller, Post, Body, UnauthorizedException, UseGuards } from '@nestjs/common';
+import { Controller, Post, Body, UnauthorizedException, UseGuards, ValidationPipe } from '@nestjs/common';
 
 @Controller('auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @Post("login")
-  async signIn(@Body() loginUserDto: LoginUserDto) {
+  async signIn(@Body(new ValidationPipe()) loginUserDto: LoginUserDto) {
 
     var token = await this.authService.signInAsync(loginUserDto);
 

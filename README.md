@@ -10,7 +10,7 @@ A UI foi desenvolvida utilizando as seguintes tecnologias:
 
 - Vue
 
-O banco de dados NoSQL:
+Banco de dados NoSQL:
 
 - MongoDB
 
@@ -65,6 +65,9 @@ npm i @nestjs/jwt @nestjs/config
 # Adiciona o módulo bcrypt para criptografar a senha do usuário
 npm i bcrypt
 npm i -D @types/bcrypt
+
+# Adiciona o módulo de validação de dados
+npm i --save class-validator class-transformer
 ```
 
 ## Comandos utilizados para criação da UI

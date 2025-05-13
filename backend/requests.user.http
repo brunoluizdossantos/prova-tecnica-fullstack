@@ -8,9 +8,9 @@ Content-Type: application/json
 
 {
   "name": "Bruno Luiz",
-  "description": "Descrição de teste.",
-  "image": "123123213.png",
-  "email": "bruno@teste3.com",
+  "description": "",
+  "image": "",
+  "email": "bruno@teste7.com",
   "password": "123123"
 }
 
