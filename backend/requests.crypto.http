@@ -1,3 +1,3 @@
 ###
 GET http://localhost:3000/crypto/10/1
-Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6bnVsbCwiaWF0IjoxNzQ3MDk3NDg5LCJleHAiOjE3NDcxODM4ODl9.6WW7-ztiXORr20m2LHcgA6gQNaj5pHoo72zrH_4YXKo"
+Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6bnVsbCwiaWF0IjoxNzQ3MTA5MjI0LCJleHAiOjE3NDcxOTU2MjR9.omqIXkmXe2M2Ur32i63jA6UHh21jvvwwygEDzqzLOd4"

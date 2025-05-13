@@ -3,6 +3,7 @@ import { UpdateUserDto } from '@application/dto/update-user.dto';
 import { PrismaService } from '@infra/data/client/prisma.service';
 import { Injectable } from '@nestjs/common';
 import * as bcrypt from  'bcrypt';
+import { diskStorage } from 'multer';
 
 @Injectable()
 export class UsersService {
@@ -80,5 +81,26 @@ export class UsersService {
         image: true,
       },
     });
+  }
+
+  async uploadUserImageAsync(id: string, file: Express.Multer.File): Promise<any> {
+    const imagePath = `${process.env.FILE_UPLOAD_PATH || ''}/${file.filename}`
+    const imageUrl = imagePath.replace(process.env.FILE_UPLOAD_PATH || '', '/uploads');
+
+    await this.prismaService.user.update({
+      where: {
+        id,
+      },
+      data: {
+        image: imageUrl,
+      },
+    });
+    
+    return {
+      filename: file.filename,
+      size: file.size,
+      mimetype: file.mimetype,
+      url: imageUrl,
+    };
   }
 }

@@ -72,6 +72,9 @@ npm i --save class-validator class-transformer
 
 # Adiciona o módulo para consumir API's externas
 npm i --save @nestjs/axios axios
+
+# Adiciona o módulo para upload de imagem
+npm i -D @types/multer
 ```
 
 ## Comandos utilizados para criação da UI

@@ -1,6 +1,6 @@
 ###
 GET http://localhost:3000/user
-Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6bnVsbCwiaWF0IjoxNzQ3MDk3NDg5LCJleHAiOjE3NDcxODM4ODl9.6WW7-ztiXORr20m2LHcgA6gQNaj5pHoo72zrH_4YXKo"
+Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6bnVsbCwiaWF0IjoxNzQ3MTA5MjI0LCJleHAiOjE3NDcxOTU2MjR9.omqIXkmXe2M2Ur32i63jA6UHh21jvvwwygEDzqzLOd4"
 
 ###
 POST http://localhost:3000/user
@@ -16,12 +16,12 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3000/user/682295bf600bbb29398971dc
-Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6bnVsbCwiaWF0IjoxNzQ3MDk3NDg5LCJleHAiOjE3NDcxODM4ODl9.6WW7-ztiXORr20m2LHcgA6gQNaj5pHoo72zrH_4YXKo"
+Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6bnVsbCwiaWF0IjoxNzQ3MTA5MjI0LCJleHAiOjE3NDcxOTU2MjR9.omqIXkmXe2M2Ur32i63jA6UHh21jvvwwygEDzqzLOd4"
 
 ###
 PATCH http://localhost:3000/user/682295bf600bbb29398971dc
 Content-Type: application/json
-Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6bnVsbCwiaWF0IjoxNzQ3MDk3NDg5LCJleHAiOjE3NDcxODM4ODl9.6WW7-ztiXORr20m2LHcgA6gQNaj5pHoo72zrH_4YXKo"
+Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6bnVsbCwiaWF0IjoxNzQ3MTA5MjI0LCJleHAiOjE3NDcxOTU2MjR9.omqIXkmXe2M2Ur32i63jA6UHh21jvvwwygEDzqzLOd4"
 
 {
   "id": "682295bf600bbb29398971dc",
@@ -32,4 +32,4 @@ Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6bnVsbCwiaWF0
 
 ###
 DELETE http://localhost:3000/user/682295bf600bbb29398971dc
-Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6bnVsbCwiaWF0IjoxNzQ3MDk3NDg5LCJleHAiOjE3NDcxODM4ODl9.6WW7-ztiXORr20m2LHcgA6gQNaj5pHoo72zrH_4YXKo"
+Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6bnVsbCwiaWF0IjoxNzQ3MTA5MjI0LCJleHAiOjE3NDcxOTU2MjR9.omqIXkmXe2M2Ur32i63jA6UHh21jvvwwygEDzqzLOd4"

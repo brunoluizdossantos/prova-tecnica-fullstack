@@ -10,14 +10,14 @@ export class AuthGuard implements CanActivate {
             const request = context.switchToHttp().getRequest();
             const { authorization }: any = request.headers;
             if (!authorization || authorization.trim() === '') {
-                throw new UnauthorizedException('Por favor forneça um token de autenticação.');
+                throw new UnauthorizedException('Por favor, informe um token de autenticação.');
             }
             const authToken = authorization.replace(/bearer/gim, '').trim();
             const resp = await this.authService.validateTokenAsync(authToken);
             request.decodedData = resp;
             return true;
         } catch (error) {
-            throw new UnauthorizedException(error.message || 'A sessão expirou! Por favor, inicie novamente sua sessão');
+            throw new UnauthorizedException(error.message || 'A sessão expirou! Por favor, inicie novamente sua sessão.');
         }
     }
 }

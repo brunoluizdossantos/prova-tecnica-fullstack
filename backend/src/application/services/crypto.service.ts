@@ -11,12 +11,15 @@ export class CryptoService {
 
   async findAllCryptosAsync(items: number, page: number): Promise<CryptoDto[]> {
     const { data } = await firstValueFrom(
-      this.httpService.get<CryptoDto[]>(
-        (process.env.CRYPTO_API_URL || '') + `&per_page=${items}&page=${page}`,
-      ).pipe(catchError((error: AxiosError) => {
-        this.logger.error(error.response?.data)
-        throw `Erro ao buscar as criptomoedas. Erro: ${error.response?.data}`;
-      }))
+      this.httpService
+        .get<CryptoDto[]>((process.env.CRYPTO_API_URL || '') + `&per_page=${items}&page=${page}`)
+        .pipe(
+          catchError((error: AxiosError) => {
+            this.logger.error(error.response?.data)
+            throw `Erro ao buscar as criptomoedas. Erro: ${error.response?.data}`;
+          }
+        )
+      )
     )
     return data;
   }
