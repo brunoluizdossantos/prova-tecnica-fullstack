@@ -61,6 +61,10 @@ npm install --save @nestjs/swagger swagger-ui-express
 
 # Adiciona o módulo JWT para autenticação e autorização
 npm i @nestjs/jwt @nestjs/config
+
+# Adiciona o módulo bcrypt para criptografar a senha do usuário
+npm i bcrypt
+npm i -D @types/bcrypt
 ```
 
 ## Comandos utilizados para criação da UI

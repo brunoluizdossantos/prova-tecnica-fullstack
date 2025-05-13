@@ -13,7 +13,7 @@ export class AuthGuard implements CanActivate {
                 throw new UnauthorizedException('Por favor forneça um token de autenticação.');
             }
             const authToken = authorization.replace(/bearer/gim, '').trim();
-            const resp = await this.authService.validateToken(authToken);
+            const resp = await this.authService.validateTokenAsync(authToken);
             request.decodedData = resp;
             return true;
         } catch (error) {

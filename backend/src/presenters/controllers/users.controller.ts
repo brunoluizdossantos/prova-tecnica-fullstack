@@ -9,31 +9,31 @@ export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   @Post()
-  create(@Body() createUserDto: CreateUserDto) {
-    return this.usersService.create(createUserDto);
+  async createUser(@Body() createUserDto: CreateUserDto): Promise<any> {
+    return await this.usersService.createUserAsync(createUserDto);
   }
 
   @UseGuards(AuthGuard)
   @Get()
-  findAll() {
-    return this.usersService.findAll();
+  async findAllUsers() {
+    return await this.usersService.findAllUsersAsync();
   }
 
   @UseGuards(AuthGuard)
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.usersService.findOne(id);
+  async findUser(@Param('id') id: string): Promise<any> {
+    return await this.usersService.findUserAsync(id);
   }
 
   @UseGuards(AuthGuard)
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
-    return this.usersService.update(id, updateUserDto);
+  async updateUser(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto): Promise<any> {
+    return await this.usersService.updateUserAsync(id, updateUserDto);
   }
 
   @UseGuards(AuthGuard)
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.usersService.remove(id);
+  async deleteUser(@Param('id') id: string): Promise<any> {
+    return await this.usersService.deleteUserAsync(id);
   }
 }

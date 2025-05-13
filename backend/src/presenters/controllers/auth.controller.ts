@@ -7,9 +7,9 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @Post("login")
-  async login(@Body() loginUserDto: LoginUserDto) {
+  async signIn(@Body() loginUserDto: LoginUserDto) {
 
-    var token = await this.authService.signIn(loginUserDto);
+    var token = await this.authService.signInAsync(loginUserDto);
 
     if (token.length > 0) {
       return {
