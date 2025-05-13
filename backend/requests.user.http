@@ -1,0 +1,35 @@
+###
+GET http://localhost:3000/user
+Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6bnVsbCwiaWF0IjoxNzQ3MDk0Mjk4LCJleHAiOjE3NDcxODA2OTh9.t2IIL8vO9VoMPI-fl38oaQUsp9zJNsOodbLxG2_9NLU"
+
+###
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+  "name": "Bruno Luiz",
+  "description": "Descrição de teste.",
+  "image": "123123213.png",
+  "email": "bruno@teste4.com",
+  "password": "123123"
+}
+
+###
+GET http://localhost:3000/user/6822487ed80af8dd9760a9e9
+Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6bnVsbCwiaWF0IjoxNzQ3MDk0Mjk4LCJleHAiOjE3NDcxODA2OTh9.t2IIL8vO9VoMPI-fl38oaQUsp9zJNsOodbLxG2_9NLU"
+
+###
+PATCH http://localhost:3000/user/6822487ed80af8dd9760a9e9
+Content-Type: application/json
+Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6bnVsbCwiaWF0IjoxNzQ3MDk0Mjk4LCJleHAiOjE3NDcxODA2OTh9.t2IIL8vO9VoMPI-fl38oaQUsp9zJNsOodbLxG2_9NLU"
+
+{
+  "id": "6822487ed80af8dd9760a9e9",
+  "name": "Bruno Luiz dos Santos",
+  "description": "Descrição de teste.",
+  "image": "123123213.png"
+}
+
+###
+DELETE http://localhost:3000/user/6822487ed80af8dd9760a9e9
+Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6bnVsbCwiaWF0IjoxNzQ3MDk0Mjk4LCJleHAiOjE3NDcxODA2OTh9.t2IIL8vO9VoMPI-fl38oaQUsp9zJNsOodbLxG2_9NLU"

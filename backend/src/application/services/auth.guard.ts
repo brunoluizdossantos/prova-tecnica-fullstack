@@ -17,7 +17,6 @@ export class AuthGuard implements CanActivate {
             request.decodedData = resp;
             return true;
         } catch (error) {
-            console.log('auth error - ', error.message);
             throw new UnauthorizedException(error.message || 'A sessão expirou! Por favor, inicie novamente sua sessão');
         }
     }

@@ -56,8 +56,11 @@ npx prisma db push
 # Automatiza a criação de uma estrutura de recursos RESTful
 nest g res users
 
-# Adiciona Swagger ao projeto
+# Adiciona o módulo para a documentação do Swagger ao projeto
 npm install --save @nestjs/swagger swagger-ui-express
+
+# Adiciona o módulo JWT para autenticação e autorização
+npm i @nestjs/jwt @nestjs/config
 ```
 
 ## Comandos utilizados para criação da UI
