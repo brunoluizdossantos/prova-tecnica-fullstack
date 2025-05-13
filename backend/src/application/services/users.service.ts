@@ -92,7 +92,7 @@ export class UsersService {
         id,
       },
       data: {
-        image: imageUrl,
+        image: `${process.env.BASE_URL}${imageUrl}`,
       },
     });
     
@@ -100,7 +100,7 @@ export class UsersService {
       filename: file.filename,
       size: file.size,
       mimetype: file.mimetype,
-      url: imageUrl,
+      url: `${process.env.BASE_URL}${imageUrl}`,
     };
   }
 }
