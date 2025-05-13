@@ -56,12 +56,16 @@
 </template>
 
 <script setup>
-  import { useField, useForm } from 'vee-validate'
+  import { useField, useForm } from 'vee-validate';
+  import http from '@/services/http.js';
+  import { useAuth } from '@/stores/auth.js';
+
+  const auth = useAuth();
 
   const { handleSubmit, handleReset } = useForm({
     validationSchema: {
       email (value) {
-        if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true
+        if (/^[a-z0-9.-]+@[a-z0-9.-]+\.[a-z]+$/i.test(value)) return true
 
         return 'Informe um e-mail válido.'
       },
@@ -72,12 +76,22 @@
       },
     },
   })
+
   const email = useField('email')
   const password = useField('password')
 
-  const submit = handleSubmit(values => {
-    console.log(JSON.stringify(values, null, 2));
-    alert(JSON.stringify(values, null, 2))
+  const submit = handleSubmit(async values => {    
+    try {
+      const response = await http.post('auth/login', JSON.stringify(values));
+      auth.setToken(response.data.token);
+      auth.setUser(response.data.user);
+
+      location.reload();
+    }
+    catch (error) {
+      console.error('Error:', error)
+      alert('Erro ao fazer login. Verifique suas credenciais.')
+    }
   })
 </script>
 

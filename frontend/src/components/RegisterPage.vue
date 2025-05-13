@@ -55,7 +55,7 @@
           </v-card-actions>
 
           <v-container>
-            <p class="redirect text-center font-size-14">Voltar para o <router-link to="/">Login</router-link></p>
+            <p class="redirect text-center font-size-14">Já possui uma conta? <router-link to="/">Entrar</router-link></p>
           </v-container>
         </v-form>
       </v-card>
@@ -65,6 +65,7 @@
 
 <script setup>
   import { useField, useForm } from 'vee-validate'
+  import http from '@/services/http.js';
 
   const { handleSubmit, handleReset } = useForm({
     validationSchema: {
@@ -74,7 +75,7 @@
         return 'Nome deve ter pelo menos 3 caracteres.'
       },
       email (value) {
-        if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true
+        if (/^[a-z0-9.-]+@[a-z0-9.-]+\.[a-z]+$/i.test(value)) return true
 
         return 'Informe um e-mail válido.'
       },
@@ -85,13 +86,26 @@
       },
     },
   })
+
   const name = useField('name')
   const email = useField('email')
   const password = useField('password')
 
-  const submit = handleSubmit(values => {
-    console.log(JSON.stringify(values, null, 2));
-    alert(JSON.stringify(values, null, 2))
+  const submit = handleSubmit(async values => {    
+    try {
+      const register = await http.post('user', JSON.stringify(values));
+
+      if (register.status === 201) {
+        alert('Cadastro realizado com sucesso! Você pode fazer login agora.');
+      } else {
+        alert('Erro ao cadastrar. Tente novamente.');
+        return;
+      }
+    }
+    catch (error) {
+      console.error('Error:', error)
+      alert('Erro ao fazer login. Verifique suas credenciais.')
+    }
   })
 </script>
 

@@ -8,17 +8,6 @@ export class AuthController {
 
   @Post("login")
   async signIn(@Body(new ValidationPipe()) loginUserDto: LoginUserDto) {
-
-    var token = await this.authService.signInAsync(loginUserDto);
-
-    if (token.length > 0) {
-      return {
-        message: "Autenticação realizada com sucesso.",
-        statusCode: 201,
-        token: token,
-      };
-    }
-  
-    throw new UnauthorizedException('Não foi possível realizar sua autenticação.');
+    return await this.authService.signInAsync(loginUserDto);
   }
 }

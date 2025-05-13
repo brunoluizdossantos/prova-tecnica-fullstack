@@ -104,6 +104,12 @@ cd frontend
 
 # Adiciona biblioteca de validação de formulários
 npm install vee-validate --save
+
+# Adiciona o módulo para consumir API's
+npm install --save axios vue-axios
+
+# Adiciona biblioteca de ícones
+npm install @mdi/js
 ```
 
 ## Documentações utilizadas

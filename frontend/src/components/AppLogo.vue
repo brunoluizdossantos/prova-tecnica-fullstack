@@ -1,11 +1,7 @@
 <template>
     <v-row justify="center">
       <div>
-        <v-img
-            class="mb-4"
-            height="150"
-            src="@/assets/logo.png"
-        />
+        <ImageLogo />
         <div class="mb-8 text-center">
             <div class="text-body-2 font-weight-light mb-1">Prova Técnica Fullstack</div>
             <h1 class="text-h2 font-weight-bold">Erictech</h1>

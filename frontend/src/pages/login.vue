@@ -1,5 +1,5 @@
 <template>
-  <HomePage />
+  <LoginPage />
 </template>
 
 <script lang="ts" setup>

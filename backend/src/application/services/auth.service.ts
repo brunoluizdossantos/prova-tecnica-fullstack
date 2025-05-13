@@ -9,7 +9,7 @@ import * as bcrypt from 'bcrypt';
 export class AuthService {
     constructor(private readonly jwtService: JwtService, private readonly prismaService: PrismaService) { }
 
-    async signInAsync(loginUserDto: LoginUserDto): Promise<string> {
+    async signInAsync(loginUserDto: LoginUserDto): Promise<any> {
         const user = await this.prismaService.user.findUnique({
             where: {
                 email: loginUserDto.email
@@ -24,7 +24,20 @@ export class AuthService {
 
         const token = await this.createTokenAsync(+user?.id);
 
-        return token;
+        if (token.length > 0) {
+            return {
+                message: "Autenticação realizada com sucesso.",
+                statusCode: 201,
+                token: token,
+                user: {
+                    id: user.id,
+                    name: user.name,
+                    email: user.email
+                }
+            };
+        } else {
+            throw new UnauthorizedException('Não foi possível realizar sua autenticação.');
+        }
     }
  
     async createTokenAsync(id: number): Promise<string> {

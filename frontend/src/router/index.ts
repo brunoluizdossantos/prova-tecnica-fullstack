@@ -1,13 +1,7 @@
-/**
- * router/index.ts
- *
- * Automatic routes for `./src/pages/*.vue`
- */
-
-// Composables
 import { createRouter, createWebHistory } from 'vue-router/auto'
 import { setupLayouts } from 'virtual:generated-layouts'
 import { routes } from 'vue-router/auto-routes'
+import { useAuth } from '@/stores/auth.js';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,5 +26,20 @@ router.onError((err, to) => {
 router.isReady().then(() => {
   localStorage.removeItem('vuetify:dynamic-reload')
 })
+
+router.beforeEach(async (to, from) => {
+  const auth = useAuth();
+  const publicPages = ['/login', '/register'];
+  const authRequired = !publicPages.includes(to.path);
+  const loggedIn = !!auth.token && !!auth.user;
+
+  if (authRequired && !loggedIn) {
+    return { path: '/login' };
+  }
+  
+  if ((to.path === '/login' || to.path === '/register') && loggedIn) {
+    return { path: '/' };
+  }
+});
 
 export default router
