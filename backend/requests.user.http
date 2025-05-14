@@ -13,17 +13,18 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3000/user/682295bf600bbb29398971dc
+GET http://localhost:3000/user/68238b829c23f54c398852eb
 Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6bnVsbCwiaWF0IjoxNzQ3MTA5MjI0LCJleHAiOjE3NDcxOTU2MjR9.omqIXkmXe2M2Ur32i63jA6UHh21jvvwwygEDzqzLOd4"
 
 ###
-PATCH http://localhost:3000/user/682295bf600bbb29398971dc
+PATCH http://localhost:3000/user/68238b829c23f54c398852eb
 Content-Type: application/json
 Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6bnVsbCwiaWF0IjoxNzQ3MTA5MjI0LCJleHAiOjE3NDcxOTU2MjR9.omqIXkmXe2M2Ur32i63jA6UHh21jvvwwygEDzqzLOd4"
 
 {
-  "id": "682295bf600bbb29398971dc",
+  "id": "68238b829c23f54c398852eb",
   "name": "Bruno Luiz dos Santos",
+  "email": "brunoluizAAA@gmail.com",
   "description": "Descrição de teste.",
   "image": "123123213.png"
 }

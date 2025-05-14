@@ -13,7 +13,8 @@ export class UsersService {
     return await this.prismaService.user.create({
       data: {
         ...data,
-        password: hashPassword
+        password: hashPassword,
+        image: `${process.env.BASE_URL}/uploads/default.jpg`,
       },
       select: {
         id: true,
@@ -62,8 +63,8 @@ export class UsersService {
       },
       data: {
         name: updateUserDto.name,
+        email: updateUserDto.email,
         description: updateUserDto.description,
-        image: updateUserDto.image,
       },
     });
   }

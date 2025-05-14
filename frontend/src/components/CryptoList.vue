@@ -34,5 +34,5 @@
     .card-container
         display: flex
         flex-direction: column
-        gap: 20px
+        gap: 30px
 </style>

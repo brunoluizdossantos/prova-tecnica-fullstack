@@ -33,8 +33,8 @@ export class AuthService {
                     id: user.id,
                     name: user.name,
                     email: user.email,
-                    description: "",
-                    image: ""
+                    description: user.description,
+                    image: user.image
                 }
             };
         } else {
