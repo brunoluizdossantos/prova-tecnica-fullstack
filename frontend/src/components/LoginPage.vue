@@ -89,7 +89,7 @@
       location.reload();
     }
     catch (error) {
-      console.error('Error:', error)
+      console.error('Erro: ', error)
       alert('Erro ao fazer login. Verifique suas credenciais.')
     }
   })
