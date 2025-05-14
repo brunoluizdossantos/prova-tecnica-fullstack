@@ -47,7 +47,16 @@ npm run dev
 http://localhost:3001/
 ```
 
-## Comandos utilizados para criação da API
+## Documentações utilizadas
+
+- [Nest](https://docs.nestjs.com)
+- [Prisma ORM](https://www.prisma.io/docs)
+- [Vue](https://vuejs.org/guide/introduction.html)
+- [Vite](https://vite.dev/guide)
+- [Vuetify](https://vuetifyjs.com/en/introduction/why-vuetify)
+- [Material Design](https://m3.material.io)
+
+## Documentação dos comandos utilizados para criação da API
 ```bash
 # Realiza a criação do projeto Node.js com framework NestJS
 nest new backend
@@ -94,7 +103,7 @@ npm i --save @nestjs/axios axios
 npm i -D @types/multer
 ```
 
-## Comandos utilizados para criação da UI
+## Documentação dos comandos utilizados para criação da UI
 ```bash
 # Realiza a criação do projeto Vue 3 com Vuetify
 npm create vuetify@latest
@@ -111,12 +120,3 @@ npm install --save axios vue-axios
 # Adiciona biblioteca de ícones
 npm install @mdi/js
 ```
-
-## Documentações utilizadas
-
-- [Nest](https://docs.nestjs.com)
-- [Prisma ORM](https://www.prisma.io/docs)
-- [Vue](https://vuejs.org/guide/introduction.html)
-- [Vite](https://vite.dev/guide)
-- [Vuetify](https://vuetifyjs.com/en/introduction/why-vuetify)
-- [Material Design](https://m3.material.io)
