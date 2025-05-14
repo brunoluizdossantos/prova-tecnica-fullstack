@@ -58,7 +58,7 @@
     })
 
     function filterCryptos(cryptos, search) {
-        return cryptos.filter(crypto => crypto.name.startsWith(search));
+        return cryptos.filter(crypto => crypto.name.toLowerCase().startsWith(search.toLowerCase()));
     }
 </script>
 

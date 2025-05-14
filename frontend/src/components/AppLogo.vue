@@ -1,6 +1,6 @@
 <template>
-    <v-row justify="center">
-      <div>
+    <v-row justify="end">
+      <div class="text-center">
         <ImageLogo />
         <div class="mb-8 text-center">
             <div class="text-body-2 font-weight-light mb-1">Prova Técnica Fullstack</div>
