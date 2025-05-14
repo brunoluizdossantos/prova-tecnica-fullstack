@@ -12,6 +12,8 @@ declare module 'vue' {
     AppFooter: typeof import('./components/AppFooter.vue')['default']
     AppLogo: typeof import('./components/AppLogo.vue')['default']
     AppNavigation: typeof import('./components/AppNavigation.vue')['default']
+    Crypto: typeof import('./components/Crypto.vue')['default']
+    CryptoList: typeof import('./components/CryptoList.vue')['default']
     HomePage: typeof import('./components/HomePage.vue')['default']
     ImageLogo: typeof import('./components/ImageLogo.vue')['default']
     LoginPage: typeof import('./components/LoginPage.vue')['default']

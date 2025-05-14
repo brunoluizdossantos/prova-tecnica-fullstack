@@ -7,6 +7,8 @@
         <v-card-text>
           <ImageLogo />
 
+          {{ id }}
+
           <v-form @submit.prevent="submit">
             <v-container>
               <v-text-field
@@ -57,9 +59,12 @@
 
 <script setup>
   import { useField, useForm } from 'vee-validate'
+  import http from '@/services/http.js';
   import { useAuth } from '@/stores/auth.js';
 
   const auth = useAuth();
+  const id = ref(auth.userId);
+  const username = ref(auth.userName);
 
   const { handleSubmit, handleReset } = useForm({
     validationSchema: {
@@ -69,9 +74,12 @@
         return 'Nome deve ter pelo menos 3 caracteres.'
       },
       email (value) {
-        if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true
+        if (/^[a-z0-9.-]+@[a-z0-9.-]+\.[a-z]+$/i.test(value)) return true
 
         return 'Informe um e-mail válido.'
+      },
+      description (value) {
+        return true
       },
     },
   })
@@ -79,10 +87,32 @@
   const name = useField('name')
   const email = useField('email')
   const description = useField('description')
+  const image = useField('image')
 
-  const submit = handleSubmit(values => {
-    console.log(JSON.stringify(values, null, 2));
-    alert(JSON.stringify(values, null, 2))
+  const submit = handleSubmit(async values => {
+    try {
+      const response = await http.patch('user', { id, name, description, image: image ?? "xx" },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${auth.token}`,
+        },
+      });
+      
+      console.log(response.data);
+
+      /*
+      if (response.status === 201) {
+        alert('Perfil atualizado com sucesso.');
+      } else {
+        alert('Erro ao cadastrar. Tente novamente.');
+        return;
+      }*/
+    }
+    catch (error) {
+      console.error('Error:', error)
+      alert('Erro ao fazer login. Verifique suas credenciais.')
+    }
   })
 </script>
 

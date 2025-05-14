@@ -3,7 +3,6 @@ import { UpdateUserDto } from '@application/dto/update-user.dto';
 import { PrismaService } from '@infra/data/client/prisma.service';
 import { Injectable } from '@nestjs/common';
 import * as bcrypt from  'bcrypt';
-import { diskStorage } from 'multer';
 
 @Injectable()
 export class UsersService {

@@ -39,6 +39,20 @@ export const useAuth = defineStore('auth', () => {
     }
     return '';
   })
+
+  const userDescription = computed(() => {
+    if (user.value) {
+      return user.value.description;
+    }
+    return '';
+  })
+  
+  const userImage = computed(() => {
+    if (user.value) {
+      return user.value.image;
+    }
+    return '';
+  })
   
   function clearUser() {
     user.value = null;
@@ -68,6 +82,8 @@ export const useAuth = defineStore('auth', () => {
     isAuthenticated,
     userId,
     userName,
-    userEmail
+    userEmail,
+    userDescription,
+    userImage
   }
 })

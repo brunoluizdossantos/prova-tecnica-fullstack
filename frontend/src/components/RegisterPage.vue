@@ -93,9 +93,9 @@
 
   const submit = handleSubmit(async values => {    
     try {
-      const register = await http.post('user', JSON.stringify(values));
+      const response = await http.post('user', JSON.stringify(values));
 
-      if (register.status === 201) {
+      if (response.status === 201) {
         alert('Cadastro realizado com sucesso! Você pode fazer login agora.');
       } else {
         alert('Erro ao cadastrar. Tente novamente.');
