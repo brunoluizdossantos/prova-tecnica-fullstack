@@ -22,6 +22,9 @@ Banco de dados NoSQL:
 # Entra no diretório da API
 $ cd backend
 
+# Instala as dependências do projeto
+npm install
+
 # Adiciona o código de acesso ao banco de dados a partir do arquivo de modelo do Prisma
 npx prisma generate
 
